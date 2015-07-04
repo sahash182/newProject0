@@ -1,0 +1,3 @@
+My User Narrative:
+
+My Project 0 is very simple blog about the different kinds of cusines. This basically is a blog posts of the images of the the particular cusines and a little description, where people get to post their interesting pictures and can leave a comment on other's post. And the description can be the name of the restaurants, taste, services and etc. With the help of these blogs people can get to try new cusines and can even find best cuisines in the local restaurants. And, at the end people could also get to leave a a feedback on the cuisine after they get to try that food. So to create this app i will be using other libraries which are bootstrap,  Jquery, Underscore Templating.
