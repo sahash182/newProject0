@@ -1,38 +1,69 @@
 
-function Book(title, author, release_date, image) {
-  this.title = title;
-  this.author = author;
-  this.release_date = release_date;
+function Food(name, origin, desc, image) {
+  this.name = name;
+  this.origin = origin;
+  this.desc = desc;
   this.image = image;
 
-  this.items = localStorage.getItem("books");
-  this.key = "books";
+  this.items = localStorage.getItem("foods");
+  this.key = "foods";
 }
 
-function saveRender() {}
+function SaveRender() {
 
-SaveRender.prototype.saveToLs = function(book) {
+}
+
+Book.prototype = new SaveRender();
+Book.prototype.constructor = Food;
+
+SaveRender.prototype.saveToLs = function(obj) {
   if (items) {
     items_json = JSON.parse(items);
   } else {
     items_json = [];
   }
 
-  items_json.push(book);
+  items_json.push(obj);
 
   localStorage.setItem("books", JSON.stringify(items_json));
 }
 
-SaveRender.prototype.renderTemplate = function(template_source, where) {
+SaveRender.prototype.renderTemplate = function(source, targe) {
   var items = localStorage.getItem(this.items);
 
 
   var template = _.template($(template_source).html());
 
-  _.each(items_json, function(item) {
-    $(where).append(template(item));
+  $(target).append(templateFood(this));
+
+  _.each(items_json, function(ad) {
+    $(target).append(templateFood(ad));
   });
 }
+$("#save-food").on("click", function() {
+  var temp = new Food($("#about").val(), $("#origin").val(), $("#desc").val(), $("#image").val());
+  console.log(temp);
+  temp.renderTemplate("#template-source", "#target");
+  temp.saveToLs(temp);
+});
+
+function pageLoad() {
+  var items_json = JSON.parse(localStorage.getItem("foods"));
+
+  var templateFood = _.template($("#template-source").html());
+
+  //$(target).append(templateBook(this));
+
+  _.each(items_json, function(ad) {
+    $("#target").append(templateFood(ad));
+  });
+}
+
+
+
+
+
+
 
 Book.prototype = new SaveRender();
 Book.prototype.constructor = Book;
