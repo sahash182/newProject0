@@ -83,7 +83,7 @@
   </div>
 
   <div class="margin-top-20">
-    <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Add New food</a>
+    <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Post New food</a>
   </div>
 </div>
 <!-- /Third Food -->
@@ -95,23 +95,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add New Book</h4>
+        <h4 class="modal-title">Post New Food</h4>
       </div>
       <div class="modal-body">
         <div class="bold">
-          Title
+          Name
         </div>
         <div class="margin-top-20">
           <input id="title" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
-          Author
+          Origin
         </div>
         <div class="margin-top-20">
           <input id="author" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
-          Release Date
+          Description
         </div>
         <div class="margin-top-20">
           <input id="release-date" type="text" class="form-control" />
@@ -125,7 +125,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save-book" type="button" class="btn btn-primary">Save Food</button>
+        <button id="save-food" type="button" class="btn btn-primary">Post Food</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -136,22 +136,19 @@
 </div>
 
 <script type="text/template" id="template-source">
-  <div class="row margin-top-20 book-container">
+  <div class="row margin-top-20 food-container">
     <div class="col-sm-3">
       <img src="<%= image %>" class="img-responsive" />
     </div>
     <div class="col-sm-9">
       <div class="margin-top-20">
-        <span class="bold">Title: </span><span><%= title %></span>
+        <span class="bold">Name: </span><span><%= name %></span>
       </div>
       <div>
-        <span class="bold">Author: </span><span><%= author %></span>
+        <span class="bold">Origin: </span><span><%= origin %></span>
       </div>
       <div>
-        <span class="bold">Release Date: </span><span><%= releaseDate %></span>
-      </div>
-      <div class="margin-top-20">
-        <a href="#" class="btn btn-default">Edit Book</a>
+        <span class="bold">Description: </span><span><%= desc %></span>
       </div>
     </div>
   </div>
@@ -166,7 +163,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<script src="app.js"></script>
+<script src="script.js"></script>
 
 
 

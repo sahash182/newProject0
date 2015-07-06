@@ -1,19 +1,22 @@
-function Book(title, author, releaseDate, image) {
-  this.title = title;
-  this.author = author;
-  this.releaseDate = releaseDate;
+// food constructor
+function Food(name, origin, desc, image) {
+  this.name = name;
+  this.origin = origin;
+  this.desc = desc;
   this.image = image;
 
-  this.items = localStorage.getItem("books");
-  this.key = "books";
+  this.items = localStorage.getItem("foods");
+  this.key = "foods";
 }
 
 function SaveRender() {
 
 }
+// Food prototype
+Food.prototype = new SaveRender();
+Food.prototype.constructor = Food;
 
-Book.prototype = new SaveRender();
-Book.prototype.constructor = Book;
+// Saving to localStorage
 
 SaveRender.prototype.saveToLs = function(obj) {
   if (this.items) {
@@ -26,36 +29,34 @@ SaveRender.prototype.saveToLs = function(obj) {
 
   localStorage.setItem(this.key, JSON.stringify(items_json));
 }
+// Template render function
 
 SaveRender.prototype.renderTemplate = function(source, target) {
   var items_json = JSON.parse(this.items);
 
-  var templateBook = _.template($(source).html());
+  var templateFood = _.template($(source).html());
 
-  $(target).append(templateBook(this));
+  $(target).append(templateFood(this));
 
-  // _.each(items_json, function(ad) {
-  //  $(target).append(templateBook(ad));
-  // })
 }
 
 
-$("#save-book").on("click", function() {
-  var temp = new Book($("#title").val(), $("#author").val(), $("#release-date").val(), $("#image").val());
+$("#save-food").on("click", function() {
+  var temp = new Food($("#name").val(), $("#origin").val(), $("#desc").val(), $("#image").val());
   console.log(temp);
   temp.renderTemplate("#template-source", "#target");
   temp.saveToLs(temp);
 })
 
 function pageLoad() {
-  var items_json = JSON.parse(localStorage.getItem("books"));
 
-  var templateBook = _.template($("#template-source").html());
+  var items_json = JSON.parse(localStorage.getItem("foods"));
 
-  //$(target).append(templateBook(this));
+  var templateFood = _.template($("#template-source").html());
+
 
   _.each(items_json, function(ad) {
-    $("#target").append(templateBook(ad));
+    $("#target").append(templateFood(ad));
   });
 }
 
