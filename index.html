@@ -25,143 +25,142 @@
 
 <div class="container">
 <!-- New post Button -->
-  <div class="margin-top-20" id="new_post">
-    <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Post New food</a>
-    <hr>
-  </div>
-
-  <!-- Tem[plate Begins -->
-
-  <div id="target">
-<script type="text/template" id="template-source">
-  <div class="row margin-top-20 food-container">
-    <div class="col-sm-3">
-      <img src="<%= image %>" class="img-responsive" />
+    <div class="margin-top-20" id="new_post">
+      <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Post New food</a>
+      <hr>
     </div>
-    <div class="col-sm-9">
-      <div class="margin-top-20">
-        <span class="bold" id="name">Name:<%= name %></span>
-      </div>
-      <div>
-        <span class="bold" id="origin">Origin:<%= origin %></span>
-      </div>
-      <div>
-        <span class="bold" id="desc">Description:<%= desc %></span>
-      </div>
-      <div class="margin-top-20">
-        <a href="#" class="btn btn-default" id="delete">Delete Post</a>
-      </div>
-    </div>
-  </div>
-</script>
-<!-- /template -->
   
   <!--One food-->
-  <div class="row margin-top-20 food-container">
-    <div class="col-sm-3">
-      <img src="https://www.leancuisine.com/images/site/products/plate/46.png" class="img-responsive" />
-    </div>
-    <div class="col-sm-9">
-      <div class="margin-top-20">
-        <span class="bold">Name: </span><span>Lasanga</span>
+      <div class="row margin-top-20 food-container">
+        <div class="col-sm-3">
+          <img src="https://www.leancuisine.com/images/site/products/plate/46.png" class="img-responsive" />
+        </div>
+        <div class="col-sm-9">
+          <div class="margin-top-20">
+            <span class="bold">Name: </span><span>Lasanga</span>
+          </div>
+          <div>
+            <span class="bold">Origin: </span><span>Italy</span>
+          </div>
+          <div>
+            <span class="bold">Description</span><span>Layers of sauce, cheese and pasta sheets baked. I had this on a restaurant called Little Italy in North Beach SF.</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <span class="bold">Origin: </span><span>Italy</span>
-      </div>
-      <div>
-        <span class="bold">Description</span><span>Layers of sauce, cheese and pasta sheets baked. I had this on a restaurant called Little Italy in North Beach SF.</span>
-      </div>
-    </div>
-  </div>
-  <!--/One food-->
+      <!--/One food-->
 
-  <!-- Second Food -->
+      <!-- Second Food -->
 
-  <div class="row margin-top-20 food-container">
-    <div class="col-sm-3">
-      <img src="http://www.shalombombay.com/images/TandooriSpecialties/Tandooti_Chicken.jpg" class="img-responsive" />
-    </div>
-    <div class="col-sm-9">
-      <div class="margin-top-20">
-        <span class="bold">Name: </span><span>Chicken Tandoori</span>
+      <div class="row margin-top-20 food-container">
+        <div class="col-sm-3">
+          <img src="http://www.shalombombay.com/images/TandooriSpecialties/Tandooti_Chicken.jpg" class="img-responsive" />
+        </div>
+        <div class="col-sm-9">
+          <div class="margin-top-20">
+            <span class="bold">Name: </span><span>Chicken Tandoori</span>
+          </div>
+          <div>
+            <span class="bold">Origin: </span><span>India</span>
+          </div>
+          <div>
+            <span class="bold">Description: </span><span>Marinated chicken cooked in Clayoven really tender. You can get these in Viva Goa Marina SF</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <span class="bold">Origin: </span><span>India</span>
-      </div>
-      <div>
-        <span class="bold">Description: </span><span>Marinated chicken cooked in Clayoven really tender. You can get these in Viva Goa Marina SF</span>
-      </div>
-    </div>
-  </div>
-  <!-- /second food -->
+      <!-- /second food -->
 
   <!-- Third food -->
-  <div class="row margin-top-20 food-container">
-    <div class="col-sm-3">
-      <img src="http://tacolicious.com/wp-content/uploads/2010/05/Tacolicious2__0947-449x300.jpg" class="img-responsive"/>
-    </div>
-    <div class="col-sm-9">
-      <div class="margin-top-20">
-        <span class="bold">Name: </span><span>Tacos</span>
+      <div class="row margin-top-20 food-container">
+        <div class="col-sm-3">
+          <img src="http://tacolicious.com/wp-content/uploads/2010/05/Tacolicious2__0947-449x300.jpg" class="img-responsive"/>
+        </div>
+        <div class="col-sm-9">
+          <div class="margin-top-20">
+            <span class="bold">Name: </span><span>Tacos</span>
+          </div>
+          <div>
+            <span class="bold">Origin: </span><span>Mexico</span>
+          </div>
+          <div>
+            <span class="bold">Description: </span><span>JMexican dish composed of a corn or wheat tortilla folded or rolled around a fillings. thses are the one from tacolicious mission SF</span>
+          </div>
+        </div>
       </div>
-      <div>
-        <span class="bold">Origin: </span><span>Mexico</span>
-      </div>
-      <div>
-        <span class="bold">Description: </span><span>JMexican dish composed of a corn or wheat tortilla folded or rolled around a fillings. thses are the one from tacolicious mission SF</span>
-      </div>
-    </div>
-  </div>
 
-  
-</div>
+
+      <!-- Template begins -->
+
+      <div id="target">
+        <script type="text/template" id="template-source">
+          <div class="row margin-top-20 food-container">
+            <div class="col-sm-3">
+              <img src="<%= image %>" class="img-responsive" />
+            </div>
+            <div class="col-sm-9">
+              <div class="margin-top-20">
+                <span class="bold" id="name">Name: <%= name %></span>
+              </div>
+              <div>
+                <span class="bold" id="origin">Origin: <%= origin %></span>
+              </div>
+              <div>
+                <span class="bold" id="desc">Description: <%= desc %></span>
+              </div>
+              <div class="margin-top-20">
+                <type="button" class="btn btn-default" id="delete">Delete Post</a>
+              </div>
+            </div>
+         </div>
+        </script>
+      </div>
+
+  <!-- /template -->
 <!-- /Third Food -->
 
 
 <!--Add Food Modal-->
-<div id="add-food-modal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Post New Food</h4>
-      </div>
-      <div class="modal-body">
-        <div class="bold">
-          Name
-        </div>
-        <div class="margin-top-20">
-          <input id="name" type="text" class="form-control" />
-        </div>
-        <div class="bold margin-top-20">
-          Origin
-        </div>
-        <div class="margin-top-20">
-          <input id="origin" type="text" class="form-control" />
-        </div>
-        <div class="bold margin-top-20">
-          Description
-        </div>
-        <div class="margin-top-20">
-          <input id="desc" type="text" class="form-control" />
-        </div>
-        <div class="bold margin-top-20">
-          Image
-        </div>
-        <div class="margin-top-20">
-          <input id="image" type="text" class="form-control" />
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save-food" type="button" class="btn btn-primary">Post Food</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div id="add-food-modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Post New Food</h4>
+          </div>
+          <div class="modal-body">
+            <div class="bold">
+              Name
+            </div>
+            <div class="margin-top-20">
+              <input id="name" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-20">
+              Origin
+            </div>
+            <div class="margin-top-20">
+              <input id="origin" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-20">
+              Description
+            </div>
+            <div class="margin-top-20">
+              <input id="desc" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-20">
+              Image
+            </div>
+            <div class="margin-top-20">
+              <input id="image" type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="save-food" type="button" class="btn btn-primary">Post Food</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 <!--/Add Food Modal-->
 </div>
-<!-- Template -->
 
 <hr>
 

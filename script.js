@@ -40,11 +40,13 @@ SaveRender.prototype.renderTemplate = function(source, target) {
 
 }
 // delete post
-$('#delete').on("click", $("template-source").remove());
+$('#delete').on('click', function(){
+ $('#template-source').remove()
+});
 
 
 
-$("#new_post").on('submit', function(event) {
+$("#new_post").on('click', function(event) {
     event.preventDefault()});
 
 
