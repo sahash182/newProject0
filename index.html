@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <hr>
+   <hr>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -24,8 +24,9 @@
 </nav>
 
 <div class="container">
-  <!--foods:-->
-  <div class="row margin-top-20 book-container">
+  
+  <!--One food-->
+  <div class="row margin-top-20 food-container">
     <div class="col-sm-3">
       <img src="https://www.leancuisine.com/images/site/products/plate/46.png" class="img-responsive" />
     </div>
@@ -37,35 +38,36 @@
         <span class="bold">Origin: </span><span>Italy</span>
       </div>
       <div>
-        <span class="bold">Description: </span><span>Layers of sauce, cheese and pasta sheets baked. I had this on a restaurant called Little Italy in North Beach SF.</span>
+        <span class="bold">Description</span><span>Layers of sauce, cheese and pasta sheets baked. I had this on a restaurant called Little Italy in North Beach SF.</span>
       </div>
     </div>
   </div>
+  <!--/One food-->
 
-  <div class="container">
-  <!--One Food-->
-  <div class="row margin-top-20 book-container">
+  <!-- Second Food -->
+
+  <div class="row margin-top-20 food-container">
     <div class="col-sm-3">
       <img src="http://www.shalombombay.com/images/TandooriSpecialties/Tandooti_Chicken.jpg" class="img-responsive" />
     </div>
     <div class="col-sm-9">
       <div class="margin-top-20">
-        <span class="bold">Name: </span><span>Chiken Tandoori</span>
+        <span class="bold">Name: </span><span>Chicken Tandoori</span>
       </div>
       <div>
         <span class="bold">Origin: </span><span>India</span>
       </div>
       <div>
-        <span class="bold">Description: </span><span>Marinated chicken cooked in Clayoven really tender. You can get these in Viva Goa Marina SF.</span>
+        <span class="bold">Description: </span><span>Marinated chicken cooked in Clayoven really tender. You can get these in Viva Goa Marina SF</span>
       </div>
     </div>
   </div>
+  <!-- /second food -->
 
-  <div class="container">
-  <!--One Food-->
-  <div class="row margin-top-20 book-container">
+  <!-- Third food -->
+  <div class="row margin-top-20 food-container">
     <div class="col-sm-3">
-      <img src="http://tacolicious.com/wp-content/uploads/2010/05/Tacolicious2__0947-449x300.jpg" class="img-responsive" />
+      <img src="http://tacolicious.com/wp-content/uploads/2010/05/Tacolicious2__0947-449x300.jpg" class="img-responsive"/>
     </div>
     <div class="col-sm-9">
       <div class="margin-top-20">
@@ -75,40 +77,41 @@
         <span class="bold">Origin: </span><span>Mexico</span>
       </div>
       <div>
-        <span class="bold">Description: </span><span>Mexican dish composed of a corn or wheat tortilla folded or rolled around a fillings. thses are the one from tacolicious mission SF.</span>
+        <span class="bold">Description: </span><span>JMexican dish composed of a corn or wheat tortilla folded or rolled around a fillings. thses are the one from tacolicious mission SF</span>
       </div>
     </div>
   </div>
 
   <div class="margin-top-20">
-    <a href="#" data-toggle="modal" data-target="#add-book-modal" class="btn btn-primary">Add New Food</a>
+    <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Add New food</a>
   </div>
-  <!--/One Food-->
 </div>
+<!-- /Third Food -->
 
-<!--Add Book Modal-->
-<div id="add-book-modal" class="modal fade">
+
+<!--Add Food Modal-->
+<div id="add-food-modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add New Food</h4>
+        <h4 class="modal-title">Add New Book</h4>
       </div>
       <div class="modal-body">
         <div class="bold">
-          Name
+          Title
         </div>
         <div class="margin-top-20">
           <input id="title" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
-          Origin
+          Author
         </div>
         <div class="margin-top-20">
           <input id="author" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
-          Description
+          Release Date
         </div>
         <div class="margin-top-20">
           <input id="release-date" type="text" class="form-control" />
@@ -122,31 +125,34 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save-food" type="button" class="btn btn-primary">Add Food</button>
+        <button id="save-book" type="button" class="btn btn-primary">Save Food</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<!--/Add Book Modal-->
+<!--/Add Food Modal-->
+
+<div id="target">
+</div>
 
 <script type="text/template" id="template-source">
-  <div class="row margin-top-20 food-container">
+  <div class="row margin-top-20 book-container">
     <div class="col-sm-3">
       <img src="<%= image %>" class="img-responsive" />
     </div>
     <div class="col-sm-9">
       <div class="margin-top-20">
-        <span class="bold">Name: </span><span><%= name %></span>
+        <span class="bold">Title: </span><span><%= title %></span>
       </div>
       <div>
-        <span class="bold">Origin: </span><span><%= origin%></span>
+        <span class="bold">Author: </span><span><%= author %></span>
       </div>
       <div>
-        <span class="bold">Description: </span><span><%=desc%></span>
+        <span class="bold">Release Date: </span><span><%= releaseDate %></span>
       </div>
-      // <div class="margin-top-20">
-        // <a href="#" class="btn btn-default">Edit Book</a>
-      // </div>
+      <div class="margin-top-20">
+        <a href="#" class="btn btn-default">Edit Book</a>
+      </div>
     </div>
   </div>
 </script>
@@ -160,7 +166,9 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<script src="script.js"></script>
+<script src="app.js"></script>
+
+
 
 </body>
 </html>

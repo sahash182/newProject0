@@ -1,12 +1,11 @@
-
-function Food(name, origin, desc, image) {
-  this.name = name;
-  this.origin = origin;
-  this.desc = desc;
+function Book(title, author, releaseDate, image) {
+  this.title = title;
+  this.author = author;
+  this.releaseDate = releaseDate;
   this.image = image;
 
-  this.items = localStorage.getItem("foods");
-  this.key = "foods";
+  this.items = localStorage.getItem("books");
+  this.key = "books";
 }
 
 function SaveRender() {
@@ -14,58 +13,50 @@ function SaveRender() {
 }
 
 Book.prototype = new SaveRender();
-Book.prototype.constructor = Food;
+Book.prototype.constructor = Book;
 
 SaveRender.prototype.saveToLs = function(obj) {
-  if (items) {
-    items_json = JSON.parse(items);
+  if (this.items) {
+    items_json = JSON.parse(this.items);
   } else {
     items_json = [];
   }
 
   items_json.push(obj);
 
-  localStorage.setItem("foods", JSON.stringify(items_json));
+  localStorage.setItem(this.key, JSON.stringify(items_json));
 }
 
-SaveRender.prototype.renderTemplate = function(source, targe) {
-  var items = localStorage.getItem(this.items);
+SaveRender.prototype.renderTemplate = function(source, target) {
+  var items_json = JSON.parse(this.items);
 
+  var templateBook = _.template($(source).html());
 
-  var template = _.template($(template_source).html());
+  $(target).append(templateBook(this));
 
-  $(target).append(templateFood(this));
-
-  _.each(items_json, function(ad) {
-    $(target).append(templateFood(ad));
-  });
+  // _.each(items_json, function(ad) {
+  //  $(target).append(templateBook(ad));
+  // })
 }
-$("#save-food").on("click", function() {
-  var temp = new Food($("#about").val(), $("#origin").val(), $("#desc").val(), $("#image").val());
+
+
+$("#save-book").on("click", function() {
+  var temp = new Book($("#title").val(), $("#author").val(), $("#release-date").val(), $("#image").val());
   console.log(temp);
   temp.renderTemplate("#template-source", "#target");
   temp.saveToLs(temp);
-});
+})
 
 function pageLoad() {
-  var items_json = JSON.parse(localStorage.getItem("foods"));
+  var items_json = JSON.parse(localStorage.getItem("books"));
 
-  var templateFood = _.template($("#template-source").html());
+  var templateBook = _.template($("#template-source").html());
 
   //$(target).append(templateBook(this));
 
   _.each(items_json, function(ad) {
-    $("#target").append(templateFood(ad));
+    $("#target").append(templateBook(ad));
   });
 }
 
 pageLoad();
-
-
-
-
-
-
-
-
-

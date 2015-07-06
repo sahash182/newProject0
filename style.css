@@ -1,26 +1,31 @@
 body{
-	background-image:url("images/bg-image.jpg");
 	background-size: cover;
-}
-.btn btn-primary{
-	float:right;
-}
-.navbar-header{
-	font-size: 35px;
-	color:blue;
-}
-.navbar navbar-default{
-	background-color: #E0F2F7;
-}
-.col-sm-9{
-	opacity:0.8;
+	background-image: url("images/tom.jpg");
 }
 .bold {
 	font-weight:bold;
 }
-
+.col-sm-3{
+	width:340px;
+	text-align: center;
+	padding-top: 20px;
+	padding-left: 90px;
+}
+.bold{
+	text-align: center;
+}
+.container-fluid{
+		background-color:#CECEF6;
+}
+.navbar-header{
+	font-size: 40px;
+	font-family: cursive; 
+}
+.btn btn-primary{
+	width: 600px;
+}
 .small-container {
-	max-width:600px;
+	max-width:800px;
 }
 
 .margin-top-10 {
@@ -31,15 +36,13 @@ body{
 	margin-top:20px;
 }
 
-.book-container {
-	padding:20px 0;
-	width:600px;
-	background-color:#E0F2F7;
-	transition:all 0.4s linear;
-	float: right;
+.food-container {
+	width: 600px;
+	background-color:#CECEF6;
+	transition:all 0.3s linear;
 }
 
-.book-container:hover {
+.food-container:hover {
 	background-color:#DDD;
 	transition:all 0.3s ease-in-out;
 }
