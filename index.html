@@ -122,12 +122,34 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button id="save-book" type="button" class="btn btn-primary">Add Food</button>
+        <button id="save-food" type="button" class="btn btn-primary">Add Food</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--/Add Book Modal-->
+
+<script type="text/template" id="template-source">
+  <div class="row margin-top-20 food-container">
+    <div class="col-sm-3">
+      <img src="<%= image %>" class="img-responsive" />
+    </div>
+    <div class="col-sm-9">
+      <div class="margin-top-20">
+        <span class="bold">Name: </span><span><%= name %></span>
+      </div>
+      <div>
+        <span class="bold">Origin: </span><span><%= origin%></span>
+      </div>
+      <div>
+        <span class="bold">Description: </span><span><%=desc%></span>
+      </div>
+      // <div class="margin-top-20">
+        // <a href="#" class="btn btn-default">Edit Book</a>
+      // </div>
+    </div>
+  </div>
+</script>
 
 <!--jQuery-->
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>

@@ -25,7 +25,7 @@ SaveRender.prototype.saveToLs = function(obj) {
 
   items_json.push(obj);
 
-  localStorage.setItem("books", JSON.stringify(items_json));
+  localStorage.setItem("foods", JSON.stringify(items_json));
 }
 
 SaveRender.prototype.renderTemplate = function(source, targe) {
@@ -59,34 +59,7 @@ function pageLoad() {
   });
 }
 
-
-
-
-
-
-
-Book.prototype = new SaveRender();
-Book.prototype.constructor = Book;
-
-$(document).ready(function(){
-
-var myBook = new Book("Rakesh's Book", "Rakesh Shrestha", "Today", "Image");
-myBook.saveToLs(myBook);
-
-myBook.renderTemplate("#book-template", "#book-container");
-
-var $newBookForm = $('#newBookForm');
-
-$newBookForm.on.submit(function(event) {
-   event.preventDefault();
-   console.log('Hello');
-});
-
-
-
-//Closing 
-
-
+pageLoad();
 
 
 
