@@ -2,8 +2,29 @@ body{
 	background-size: 110%;
 	background-image: url("images/tom.jpg");
 }
+h1{
+	color: #B40404;
+	font-size:50px;
+	font-family: cursive;
+	font-weight: bold;
+}
+h4{
+	text-align: center;
+	color: #B40404;
+	font-weight: bold;
+}
 .bold {
 	font-weight:bold;
+}
+.modal-body{
+	background-color: #CECEF6;
+}
+.modal-header{
+		background-color: #CECEF6;
+}
+.modal-footer{
+		background-color: #CECEF6;
+
 }
 .col-sm-3{
 	width:340px;
@@ -19,9 +40,6 @@ body{
 }
 #new_post{
 	text-align: center;
-}
-#delete{
-	background-color: red;
 }
 .navbar-header{
 	font-size: 40px;
@@ -49,7 +67,7 @@ body{
 }
 
 .food-container:hover {
-	background-color:#DDD;
+	background-color:#A9F5A9;
 	transition:all 0.3s ease-in-out;
 }
 

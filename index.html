@@ -15,7 +15,7 @@
    <hr>
   <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header" id="header">
       <a href="">Home   |</a>
       <a href="">Gallery   |</a>
       <a href="">Contacts    |</a>
@@ -23,12 +23,10 @@
   </div>
 </nav>
 
+<!-- container where all the posts are -->
 <div class="container">
-<!-- New post Button -->
-    <div class="margin-top-20" id="new_post">
-      <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Post New food</a>
-      <hr>
-    </div>
+
+  <h1> Welcome Food Bloggers!!</h1>
   
   <!--One food-->
       <div class="row margin-top-20 food-container">
@@ -50,6 +48,7 @@
       <!--/One food-->
 
       <!-- Second Food -->
+
 
       <div class="row margin-top-20 food-container">
         <div class="col-sm-3">
@@ -107,8 +106,8 @@
                 <span class="bold" id="desc">Description: <%= desc %></span>
               </div>
               <div class="margin-top-20">
-                <type="button" class="btn btn-default" id="delete">Delete Post</a>
-              </div>
+                  <a class="btn btn-danger delete-food">Delete Post</a>
+               </div>
             </div>
          </div>
         </script>
@@ -119,12 +118,12 @@
 
 
 <!--Add Food Modal-->
-    <div id="add-food-modal" class="modal fade">
+    <div id="add-food-modal" class="modal-fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Post New Food</h4>
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <h4 class="modal-title" id="modal-post">Post Your New Food</h4>
           </div>
           <div class="modal-body">
             <div class="bold">
@@ -153,7 +152,6 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button id="save-food" type="button" class="btn btn-primary">Post Food</button>
           </div>
         </div><!-- /.modal-content -->

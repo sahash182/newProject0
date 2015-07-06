@@ -40,14 +40,16 @@ SaveRender.prototype.renderTemplate = function(source, target) {
 
 }
 // delete post
-$('#delete').on('click', function(){
- $('#template-source').remove()
+$(document).on('click', '.delete-food', function(){
+ $(this).parents(".food-container").remove();
 });
 
 
-
-$("#new_post").on('click', function(event) {
-    event.preventDefault()});
+ // $(function(){                    
+ //     $('#save-food').click(function() {
+ //       $('.modal-fade').modal('hide');        
+ //     });                          
+ // }); 
 
 
 // saving users input
