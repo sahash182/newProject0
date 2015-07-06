@@ -24,6 +24,37 @@
 </nav>
 
 <div class="container">
+<!-- New post Button -->
+  <div class="margin-top-20" id="new_post">
+    <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Post New food</a>
+    <hr>
+  </div>
+
+  <!-- Tem[plate Begins -->
+
+  <div id="target">
+<script type="text/template" id="template-source">
+  <div class="row margin-top-20 food-container">
+    <div class="col-sm-3">
+      <img src="<%= image %>" class="img-responsive" />
+    </div>
+    <div class="col-sm-9">
+      <div class="margin-top-20">
+        <span class="bold" id="name">Name:<%= name %></span>
+      </div>
+      <div>
+        <span class="bold" id="origin">Origin:<%= origin %></span>
+      </div>
+      <div>
+        <span class="bold" id="desc">Description:<%= desc %></span>
+      </div>
+      <div class="margin-top-20">
+        <a href="#" class="btn btn-default" id="delete">Delete Post</a>
+      </div>
+    </div>
+  </div>
+</script>
+<!-- /template -->
   
   <!--One food-->
   <div class="row margin-top-20 food-container">
@@ -82,9 +113,7 @@
     </div>
   </div>
 
-  <div class="margin-top-20">
-    <a href="#" data-toggle="modal" data-target="#add-food-modal" class="btn btn-primary">Post New food</a>
-  </div>
+  
 </div>
 <!-- /Third Food -->
 
@@ -102,19 +131,19 @@
           Name
         </div>
         <div class="margin-top-20">
-          <input id="title" type="text" class="form-control" />
+          <input id="name" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
           Origin
         </div>
         <div class="margin-top-20">
-          <input id="author" type="text" class="form-control" />
+          <input id="origin" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
           Description
         </div>
         <div class="margin-top-20">
-          <input id="release-date" type="text" class="form-control" />
+          <input id="desc" type="text" class="form-control" />
         </div>
         <div class="bold margin-top-20">
           Image
@@ -131,28 +160,12 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--/Add Food Modal-->
-
-<div id="target">
 </div>
+<!-- Template -->
 
-<script type="text/template" id="template-source">
-  <div class="row margin-top-20 food-container">
-    <div class="col-sm-3">
-      <img src="<%= image %>" class="img-responsive" />
-    </div>
-    <div class="col-sm-9">
-      <div class="margin-top-20">
-        <span class="bold">Name: </span><span><%= name %></span>
-      </div>
-      <div>
-        <span class="bold">Origin: </span><span><%= origin %></span>
-      </div>
-      <div>
-        <span class="bold">Description: </span><span><%= desc %></span>
-      </div>
-    </div>
-  </div>
-</script>
+<hr>
+
+
 
 <!--jQuery-->
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>

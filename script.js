@@ -39,8 +39,16 @@ SaveRender.prototype.renderTemplate = function(source, target) {
   $(target).append(templateFood(this));
 
 }
+// delete post
+$('#delete').on("click", $("template-source").remove());
 
 
+
+$("#new_post").on('submit', function(event) {
+    event.preventDefault()});
+
+
+// saving users input
 $("#save-food").on("click", function() {
   var temp = new Food($("#name").val(), $("#origin").val(), $("#desc").val(), $("#image").val());
   console.log(temp);
@@ -48,6 +56,13 @@ $("#save-food").on("click", function() {
   temp.saveToLs(temp);
 })
 
+// clear out input fields on modal
+$('#save-food').on('hidden', function () {
+    $('input').val('');
+});
+
+
+// Page load with the template
 function pageLoad() {
 
   var items_json = JSON.parse(localStorage.getItem("foods"));
@@ -60,4 +75,10 @@ function pageLoad() {
   });
 }
 
+// calling pageload
+
 pageLoad();
+
+
+
+
